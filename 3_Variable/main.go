@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// here i learn about how to declare variable in Go Language
@@ -22,4 +24,10 @@ func main() {
 	meSkills, age := "Java and Go Language", 20
 	fmt.Println("My Skills :", meSkills)
 	fmt.Println("My Age :", age)
+
+	// create pointer variable with new() keyword
+	gf := new(string)
+	*gf = "ana ardani"
+	fmt.Println("GF :", *gf)
+
 }
