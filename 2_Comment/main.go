@@ -11,4 +11,6 @@ func main() {
 	/*
 		this is multiline comment
 	*/
+
+	/* fmt.Println("This is will not executed") */
 }
