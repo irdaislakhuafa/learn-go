@@ -18,6 +18,7 @@ func main() {
 
 	*/
 
+	// numeric data type with non decimal value
 	var positiveNumber uint8 = 178
 	var negativeNumber = -99999
 	fmt.Printf("Positive Number: %+d\n", positiveNumber)
