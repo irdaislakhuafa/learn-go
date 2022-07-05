@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	/*
 		uint8 = 0 => 255
@@ -15,4 +17,9 @@ func main() {
 		rune = same as int32
 
 	*/
+
+	var positiveNumber uint8 = 178
+	var negativeNumber = -99999
+	fmt.Printf("Positive Number: %+d\n", positiveNumber)
+	fmt.Printf("Negative Number: %+d\n", negativeNumber)
 }
