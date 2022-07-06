@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	/*
@@ -18,9 +21,18 @@ func main() {
 
 	*/
 
-	// numeric data type with non decimal value
+	const repeatLine uint8 = 20
+
+	// numeric data type with non decimal value (Integer)
 	var positiveNumber uint8 = 178
 	var negativeNumber = -99999
 	fmt.Printf("Positive Number: %+d\n", positiveNumber)
 	fmt.Printf("Negative Number: %+d\n", negativeNumber)
+	fmt.Println(strings.Repeat("=", int(repeatLine)))
+
+	// numeric data type with decimal value (Float)
+	var decimalNumber = 20.22
+	fmt.Printf("Decimal Number: %f\n", decimalNumber)
+	fmt.Printf("Decimal Number: %.3f\n", decimalNumber)
+	fmt.Println(strings.Repeat("=", int(repeatLine)))
 }
