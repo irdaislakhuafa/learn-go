@@ -35,4 +35,8 @@ func main() {
 	fmt.Printf("Decimal Number: %f\n", decimalNumber)
 	fmt.Printf("Decimal Number: %.3f\n", decimalNumber)
 	fmt.Println(strings.Repeat("=", int(repeatLine)))
+
+	// boolean data type (true/false)
+	isExists := true
+	fmt.Printf("Is Exists?: %t\n", isExists)
 }
