@@ -39,4 +39,14 @@ func main() {
 	// boolean data type (true/false)
 	isExists := true
 	fmt.Printf("Is Exists?: %t\n", isExists)
+	fmt.Println(strings.Repeat("=", int(repeatLine)))
+
+	// string data type
+	message1 := "Hi this string use 'quote' \n this is endline"
+	message2 := `Hi this string use 'backticks'
+ this is endline
+`
+
+	fmt.Printf("String with \"Quote\": %s\n", message1)
+	fmt.Printf(`String with "Backticks": %s`, message2)
 }
