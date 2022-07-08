@@ -2,12 +2,19 @@ package main
 
 import (
 	"fmt"
+	"strings"
+)
+
+const (
+	lineChar string = "="
+	lineLength int8 = 35
 )
 
 func main() {
 	// try use some operators in Go Language
 
 	// aritmatics operators (+, -, /, *, %)
+	section("aritmatics operators")
 	increase := 2 + 2
 	fmt.Println("2 + 2 :", increase)
 	
@@ -22,4 +29,35 @@ func main() {
 
 	modulus := 2 % 2
 	fmt.Println("2 % 2 :", modulus)
+
+	// comparison operators
+	section("comparison operators")
+	isEquals := 2 == 2
+	fmt.Printf("2 == 2 \t: %t\n", isEquals)
+
+	isNotEquals := 2 != 2
+	fmt.Print("2 != 2 \t: ", isNotEquals, "\n")
+
+	isLowerThan := 2 < 2
+	fmt.Println("2 <  2 \t:", isLowerThan)
+
+	isLowerThanEquals := 2 <= 2
+	fmt.Printf("2 <= 2 \t: %t\n", isLowerThanEquals)
+
+	isGreaterThan := 2 > 2
+	fmt.Print("2  > 2 \t: ", isGreaterThan, "\n")
+
+	isGreaterThanEquals := 2 >= 2
+	fmt.Println("2 >= 2 \t:", isGreaterThanEquals)
+}
+
+func section(text string) {
+	fmt.Println("\n")
+	line()
+	fmt.Printf("\t%s\n", strings.ToUpper(text))
+	line()
+}
+
+func line() {
+	fmt.Println(strings.Repeat(lineChar, int(lineLength)))
 }
