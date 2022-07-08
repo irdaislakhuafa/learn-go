@@ -49,4 +49,16 @@ func main() {
 
 	fmt.Printf("String with \"Quote\": %s\n", message1)
 	fmt.Printf(`String with "Backticks": %s`, message2)
+
+	zeroValue := `
+	Zero Value
+	%s
+	string  : ""
+	bool 	: false
+	int 	: 0
+	fload	: 0.0
+	map/slice/interface{}/channel/pointers/func : nil
+	%s
+	`
+	fmt.Printf(zeroValue, strings.Repeat("=", int(repeatLine)), strings.Repeat("=", int(repeatLine))+"\n")
 }
