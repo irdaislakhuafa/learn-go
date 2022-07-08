@@ -18,5 +18,8 @@ func main() {
 	fmt.Printf("2 * 2 : %d\n", multiplication)
 
 	division := 2 / 2
-	fmt.Print("2 / 2 : ", division)
+	fmt.Print("2 / 2 : ", division, "\n")
+
+	modulus := 2 % 2
+	fmt.Println("2 % 2 :", modulus)
 }
