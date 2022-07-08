@@ -16,4 +16,7 @@ func main() {
 
 	multiplication := 2 * 2
 	fmt.Printf("2 * 2 : %d\n", multiplication)
+
+	division := 2 / 2
+	fmt.Print("2 / 2 : ", division)
 }
