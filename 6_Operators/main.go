@@ -56,6 +56,12 @@ func main() {
 	
 	and := isTrue && isFalse
 	fmt.Printf("%t && %t : %t\n", isTrue, isFalse, and)
+
+	or := isTrue || isFalse
+	fmt.Printf("%t || %t : %t\n", isTrue, isFalse, or)
+
+	negasi := !isTrue
+	fmt.Printf("!%t         : %t\n", isTrue, negasi)
 }
 
 func section(text string) {
