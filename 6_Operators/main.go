@@ -12,5 +12,8 @@ func main() {
 	fmt.Println("2 + 2 :", increase)
 	
 	subtraction := 2 - 2
-	fmt.Print("2 - 2 : ", subtraction)
+	fmt.Print("2 - 2 : ", subtraction, "\n")
+
+	multiplication := 2 * 2
+	fmt.Printf("2 * 2 : %d\n", multiplication)
 }
