@@ -49,6 +49,13 @@ func main() {
 
 	isGreaterThanEquals := 2 >= 2
 	fmt.Println("2 >= 2 \t:", isGreaterThanEquals)
+
+	// logic operators 
+	section("logic operators")
+	isTrue, isFalse := true, false
+	
+	and := isTrue && isFalse
+	fmt.Printf("%t && %t : %t\n", isTrue, isFalse, and)
 }
 
 func section(text string) {
