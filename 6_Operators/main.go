@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	lineChar string = "="
-	lineLength int8 = 35
+	lineChar   string = "="
+	lineLength int8   = 35
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 	section("aritmatics operators")
 	increase := 2 + 2
 	fmt.Println("2 + 2 :", increase)
-	
+
 	subtraction := 2 - 2
 	fmt.Print("2 - 2 : ", subtraction, "\n")
 
@@ -50,10 +50,10 @@ func main() {
 	isGreaterThanEquals := 2 >= 2
 	fmt.Println("2 >= 2 \t:", isGreaterThanEquals)
 
-	// logic operators 
+	// logic operators
 	section("logic operators")
 	isTrue, isFalse := true, false
-	
+
 	and := isTrue && isFalse
 	fmt.Printf("%t && %t : %t\n", isTrue, isFalse, and)
 
