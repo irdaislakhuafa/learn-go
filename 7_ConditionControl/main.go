@@ -82,4 +82,6 @@ func main() {
 	default:
 		println("Your number is Greater Than 5")
 	}
+
+	// NOTE: you can use `if else` inside `switch case` or vice versa
 }
