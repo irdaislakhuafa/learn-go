@@ -31,4 +31,18 @@ func main() {
 		fmt.Printf("Yout Age Is Not : %d\n", tempVariableAge)
 	}
 
+	// switch case (in golang, switch case is without break)
+	point = 4
+	switch point {
+	case 2:
+		fmt.Println("Your number is Two")
+	case 4:
+		fmt.Println("Your number is For")
+	case 6:
+		fmt.Println("Your number is Six")
+	case 8:
+		fmt.Println("Your number is Eight")
+	case 10:
+		fmt.Println("Your number is Ten")
+	}
 }
