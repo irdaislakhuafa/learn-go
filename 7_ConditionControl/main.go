@@ -42,5 +42,7 @@ func main() {
 		fmt.Println("Your number is Eight or Six")
 	case 10:
 		fmt.Println("Your number is Ten")
+	default:
+		fmt.Println("Not number between 1 - 10")
 	}
 }
