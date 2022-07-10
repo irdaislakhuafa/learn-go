@@ -49,6 +49,13 @@ func main() {
 	for i := 0; i < len(fruits); i++ {
 		fmt.Printf(`Element %d : "%s" %s`, i, fruits[i], "\n")
 	}
+
+	// looping array with `for - range` keyword
+	line(`with "for - range"`)
+	for i, fruit := range fruits {
+		fmt.Printf("Element %d : \"%s\"\n", i, fruit)
+	}
+
 }
 
 func line(text string) {
