@@ -47,7 +47,7 @@ func main() {
 	// looping array with `for` keyword
 	line(`looping array with "for" keyword`)
 	for i := 0; i < len(fruits); i++ {
-		fmt.Printf(`Value "%s" Index %d %s`, fruits[i], i, "\n")
+		fmt.Printf(`Element %d : "%s" %s`, i, fruits[i], "\n")
 	}
 }
 
