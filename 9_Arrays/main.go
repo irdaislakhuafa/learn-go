@@ -35,6 +35,15 @@ func main() {
 	numbers := [...]int{1, 2, 3, 4, 5}
 	fmt.Println("Total Array \t:", len(numbers))
 	fmt.Println("All Arrays\t:", numbers)
+
+	// array multidimension
+	line(`array multidimension`)
+	numbers1 := [2][3]int{[3]int{1, 2, 3}, [...]int{4, 5, 6}} // example 1
+	numbers2 := [2][3]int{{1, 2, 3}, {4, 5, 6}}               // example 2
+	fmt.Printf("Numbers 1 \t: %d\n", numbers1)
+	fmt.Println("Numbers 2 \t:", numbers2)
+	// they are equals
+
 }
 
 func line(text string) {
