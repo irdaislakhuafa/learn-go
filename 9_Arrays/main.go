@@ -62,6 +62,12 @@ func main() {
 		fmt.Printf("Element : \"%s\"\n", fruit)
 	}
 
+	// use index only
+	line(`use index only`)
+	for i, _ := range fruits { // or for i := range fruits
+		fmt.Println("Index :", i)
+	}
+
 }
 
 func line(text string) {
