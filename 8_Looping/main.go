@@ -19,6 +19,17 @@ func main() {
 		fmt.Println("Number :", i)
 		i++
 	}
+
+	// for without arguments
+	line(`"for" without arguments`)
+	i = 0
+	for {
+		if i == 5 {
+			break
+		}
+		fmt.Println("Number :", i)
+		i++
+	}
 }
 
 func line(text string) {
