@@ -44,6 +44,11 @@ func main() {
 	fmt.Println("Numbers 2 \t:", numbers2)
 	// they are equals
 
+	// looping array with `for` keyword
+	line(`looping array with "for" keyword`)
+	for i := 0; i < len(fruits); i++ {
+		fmt.Printf(`Value "%s" Index %d %s`, fruits[i], i, "\n")
+	}
 }
 
 func line(text string) {
