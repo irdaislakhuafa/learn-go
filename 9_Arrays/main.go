@@ -16,7 +16,8 @@ func main() {
 
 	fmt.Printf("name 1: %s, name 2 : %s, name 3 = %s\n", names[0], names[1], names[2])
 
-	// create array with assign values (hirzontal style)
+	// create array with assign values (horizontal style)
+	line(`create array with assign values`)
 	fruits := [4]string{"banana", "apple", "manggo", "lecy"}
 	fmt.Println("Total Array \t:", len(fruits))
 	fmt.Printf("All Array \t: %v\n", fruits)
@@ -29,8 +30,15 @@ func main() {
 		"lecy",
 	}
 
+	// create array without telling maximum value
+	line(`create array without telling maximum value`)
+	numbers := [...]int{1, 2, 3, 4, 5}
+	fmt.Println("Total Array \t:", len(numbers))
+	fmt.Println("All Arrays\t:", numbers)
 }
+
 func line(text string) {
+	fmt.Println()
 	fmt.Println(strings.Repeat("=", 35))
 	fmt.Printf("\t%s\n", strings.ToUpper(text))
 	fmt.Println(strings.Repeat("=", 35))
