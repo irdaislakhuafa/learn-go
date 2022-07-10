@@ -56,6 +56,12 @@ func main() {
 		fmt.Printf("Element %d : \"%s\"\n", i, fruit)
 	}
 
+	// use `_` variable in `for`
+	line(`use "_" variable in "for"`)
+	for _, fruit := range fruits {
+		fmt.Printf("Element : \"%s\"\n", fruit)
+	}
+
 }
 
 func line(text string) {
