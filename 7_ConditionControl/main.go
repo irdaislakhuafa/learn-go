@@ -59,4 +59,14 @@ func main() {
 			fmt.Println("Not 1 or 3/5/7/9")
 		}
 	}
+
+	// switch case with if else style
+	switch {
+	case point%2 == 0:
+		fmt.Println("Your number is Even")
+	default:
+		{
+			fmt.Println("Your number is Odd")
+		}
+	}
 }
