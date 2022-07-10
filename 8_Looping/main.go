@@ -30,6 +30,20 @@ func main() {
 		fmt.Println("Number :", i)
 		i++
 	}
+
+	// use `break` and `continue` keyword
+	line(`use "break" and "continue" keyword`)
+	for i := 0; i <= 10; i++ {
+		if (i % 2) == 1 {
+			continue // go to next loop with ignore code under this code
+		}
+
+		if i > 8 {
+			break // out from loop
+		}
+
+		fmt.Printf("Number : %+d\n", i)
+	}
 }
 
 func line(text string) {
