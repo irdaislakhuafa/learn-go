@@ -53,6 +53,18 @@ func main() {
 		}
 		fmt.Printf("\n")
 	}
+
+	// use `label`
+	line(`use "label"`)
+outOfLoop: // must inside or close to loop
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 5; j++ {
+			fmt.Printf("Matriks [%d][%d]\n", i, j)
+			if i == 3 {
+				break outOfLoop
+			}
+		}
+	}
 }
 
 func line(text string) {
