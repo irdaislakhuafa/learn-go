@@ -38,11 +38,25 @@ func main() {
 		fmt.Println("Your number is Two")
 	case 4:
 		fmt.Println("Your number is For")
-	case 8:
+	case 6, 8:
 		fmt.Println("Your number is Eight or Six")
 	case 10:
 		fmt.Println("Your number is Ten")
 	default:
 		fmt.Println("Not number between 1 - 10")
+	}
+
+	// use bracket between case in switch case
+	switch point {
+	case 1:
+		{
+			fmt.Println("Your number is One")
+		}
+	case 3, 5, 7, 9:
+		fmt.Println("Your number is Tree or Five or Seven or Nine")
+	default:
+		{
+			fmt.Println("Not 1 or 3/5/7/9")
+		}
 	}
 }
