@@ -7,12 +7,13 @@ import (
 
 func main() {
 	// looping with `for` example 1
+	line(`general "for" style`)
 	for i := 0; i < 5; i++ {
 		fmt.Println("Number :", i)
 	}
-	line()
 
 	// for with `while` style
+	line(`"for" with "while" style`)
 	i := 0
 	for i < 5 {
 		fmt.Println("Number :", i)
@@ -20,6 +21,8 @@ func main() {
 	}
 }
 
-func line() {
-	fmt.Println(strings.Repeat("=", 20))
+func line(text string) {
+	fmt.Println(strings.Repeat("=", 35))
+	fmt.Printf("\t%s\n", strings.ToUpper(text))
+	fmt.Println(strings.Repeat("=", 35))
 }
