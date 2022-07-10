@@ -15,6 +15,11 @@ func main() {
 	// names[3] = "someone" // error because slot of array is 3
 
 	fmt.Printf("name 1: %s, name 2 : %s, name 3 = %s\n", names[0], names[1], names[2])
+
+	// create array with assign values
+	fruits := [4]string{"banana", "apple", "manggo", "lecy"}
+	fmt.Println("Total Array \t:", len(fruits))
+	fmt.Printf("All Array \t: %v\n", fruits)
 }
 func line(text string) {
 	fmt.Println(strings.Repeat("=", 35))
