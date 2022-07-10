@@ -69,4 +69,17 @@ func main() {
 			fmt.Println("Your number is Odd")
 		}
 	}
+
+	// use `fallthrough` keyword in switch case
+	fmt.Print("Input Your Number : ")
+	fmt.Scanln(&point)
+	switch {
+	case point <= 4:
+		fmt.Println("Your number is Lower Than or Equals 4")
+		fallthrough // continue to next case and ignore case condition
+	case point <= 5:
+		fmt.Println("Your number is Lower Than or Equals 5")
+	default:
+		println("Your number is Greater Than 5")
+	}
 }
