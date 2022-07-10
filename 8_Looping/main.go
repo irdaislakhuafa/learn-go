@@ -44,6 +44,15 @@ func main() {
 
 		fmt.Printf("Number : %+d\n", i)
 	}
+
+	// create nested looping
+	line("create nested loop")
+	for i := 0; i < 5; i++ {
+		for j := i; j < 5; j++ {
+			fmt.Printf("%+d", j)
+		}
+		fmt.Printf("\n")
+	}
 }
 
 func line(text string) {
