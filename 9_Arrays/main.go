@@ -16,10 +16,19 @@ func main() {
 
 	fmt.Printf("name 1: %s, name 2 : %s, name 3 = %s\n", names[0], names[1], names[2])
 
-	// create array with assign values
+	// create array with assign values (hirzontal style)
 	fruits := [4]string{"banana", "apple", "manggo", "lecy"}
 	fmt.Println("Total Array \t:", len(fruits))
 	fmt.Printf("All Array \t: %v\n", fruits)
+
+	// initialze array with vertical style
+	fruits = [4]string{
+		"banana",
+		"apple",
+		"manggo",
+		"lecy",
+	}
+
 }
 func line(text string) {
 	fmt.Println(strings.Repeat("=", 35))
