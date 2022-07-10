@@ -38,10 +38,8 @@ func main() {
 		fmt.Println("Your number is Two")
 	case 4:
 		fmt.Println("Your number is For")
-	case 6:
-		fmt.Println("Your number is Six")
 	case 8:
-		fmt.Println("Your number is Eight")
+		fmt.Println("Your number is Eight or Six")
 	case 10:
 		fmt.Println("Your number is Ten")
 	}
