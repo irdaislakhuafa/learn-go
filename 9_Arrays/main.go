@@ -68,6 +68,13 @@ func main() {
 		fmt.Println("Index :", i)
 	}
 
+	// create array with keyword `make`
+	line(`create array with keyword "make"`)
+	genders := make([]string, 2)
+	genders[0] = "male"
+	genders[1] = "female"
+
+	fmt.Println("Genders:", genders)
 }
 
 func line(text string) {
