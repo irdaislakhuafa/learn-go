@@ -6,38 +6,78 @@ import (
 )
 
 func main() {
-	line(`initialize slice and array`)
-	sliceFruits := []string{"banana", "apple"}    // slice
-	arrayFruits := [...]string{"banana", "apple"} // array
+	{
+		line(`initialize slice and array`)
+		sliceFruits := []string{"banana", "apple"}    // slice
+		arrayFruits := [...]string{"banana", "apple"} // array
 
-	// try use "append()"
-	// sliceFruits = append(sliceFruits, "lecy") // can use "append()" in slice
-	// arrayFruits = append(arrayFruits, "lecy") // can't use "append()" in array
+		// try use "append()"
+		// sliceFruits = append(sliceFruits, "lecy") // can use "append()" in slice
+		// arrayFruits = append(arrayFruits, "lecy") // can't use "append()" in array
 
-	fmt.Println("Slice Fruits:", sliceFruits)
-	fmt.Println("Array Fruits:", arrayFruits)
-	fmt.Println("Slice Fruits[0]:", sliceFruits[0])
-	fmt.Println("Array Fruits[0]:", arrayFruits[0])
-	fmt.Println("Slice Fruits[1]:", sliceFruits[1])
-	fmt.Println("Array Fruits[1]:", arrayFruits[1])
-	// fmt.Println("Slice Fruits[2]:", sliceFruits[2]) // don't have error notif but panic while code is running
-	// fmt.Println("Array Fruits[0]:", arrayFruits[2]) // have error notif
+		fmt.Println("Slice Fruits:", sliceFruits)
+		fmt.Println("Array Fruits:", arrayFruits)
+		fmt.Println("Slice Fruits[0]:", sliceFruits[0])
+		fmt.Println("Array Fruits[0]:", arrayFruits[0])
+		fmt.Println("Slice Fruits[1]:", sliceFruits[1])
+		fmt.Println("Array Fruits[1]:", arrayFruits[1])
+		// fmt.Println("Slice Fruits[2]:", sliceFruits[2]) // don't have error notif but panic while code is running
+		// fmt.Println("Array Fruits[0]:", arrayFruits[2]) // have error notif
+	}
 
-	line(`slice and array relationship and slice operation`)
-	arrayNames := [...]string{"me", "you"}
-	sliceOfArrayNames := arrayNames[0:2] // 2 index technique return slice
+	{
+		line(`slice and array relationship and slice operation`)
+		arrayNames := [...]string{"me", "you"}
+		sliceOfArrayNames := arrayNames[0:2] // 2 index technique return slice
 
-	fmt.Printf("arrayNames (Array): %v\n", arrayNames)
-	fmt.Printf("sliceOfArrayNames (Slice): %v\n\n", sliceOfArrayNames)
+		fmt.Printf("arrayNames (Array): %v\n", arrayNames)
+		fmt.Printf("sliceOfArrayNames (Slice): %v\n\n", sliceOfArrayNames)
 
-	fmt.Printf("sliceOfArrayNames[0:1]: %v\n", sliceOfArrayNames[0:1]) // ["me"]
-	fmt.Printf("sliceOfArrayNames[0:2]: %v\n", sliceOfArrayNames[0:2]) // ["me", "you"]
-	fmt.Printf("sliceOfArrayNames[0:0]: %v\n", sliceOfArrayNames[0:0]) // []
-	fmt.Printf("sliceOfArrayNames[1:1]: %v\n", sliceOfArrayNames[1:1]) // []
-	// fmt.Printf("sliceOfArrayNames[1:0]: %v\n", sliceOfArrayNames[1:0]) // first index must be lower than second index
-	fmt.Printf("sliceOfArrayNames[:]: %v\n", sliceOfArrayNames[:])   // ["me", "you"] / all elements
-	fmt.Printf("sliceOfArrayNames[0:]: %v\n", sliceOfArrayNames[0:]) // ["me", "you"] / all elements start from index 0 to end index
-	fmt.Printf("sliceOfArrayNames[:1]: %v\n", sliceOfArrayNames[:1]) // ["me"] / all elements from index 0 until before index 1
+		fmt.Printf("sliceOfArrayNames[0:1]: %v\n", sliceOfArrayNames[0:1]) // ["me"]
+		fmt.Printf("sliceOfArrayNames[0:2]: %v\n", sliceOfArrayNames[0:2]) // ["me", "you"]
+		fmt.Printf("sliceOfArrayNames[0:0]: %v\n", sliceOfArrayNames[0:0]) // []
+		fmt.Printf("sliceOfArrayNames[1:1]: %v\n", sliceOfArrayNames[1:1]) // []
+		// fmt.Printf("sliceOfArrayNames[1:0]: %v\n", sliceOfArrayNames[1:0]) // first index must be lower than second index
+		fmt.Printf("sliceOfArrayNames[:]: %v\n", sliceOfArrayNames[:])   // ["me", "you"] / all elements
+		fmt.Printf("sliceOfArrayNames[0:]: %v\n", sliceOfArrayNames[0:]) // ["me", "you"] / all elements start from index 0 to end index
+		fmt.Printf("sliceOfArrayNames[:1]: %v\n", sliceOfArrayNames[:1]) // ["me"] / all elements from index 0 until before index 1
+	}
+
+	{
+		line(`slice is reference data type (pointers of array)`)
+		peoples := []string{"me", "you", "they", "we"}
+
+		aPeoples := peoples[0:3] // ["me", "you", "they"]
+		bPeoples := peoples[1:4] // ["you", "they", "we"]
+
+		aaPeoples := peoples[1:2] // ["you"]
+		bbPeoples := peoples[0:1] // ["me"]
+
+		fmt.Println(`before change some value in slice`)
+		fmt.Println(strings.Repeat("-", 35))
+
+		fmt.Printf("aPeoples: %v\n", aPeoples)
+		fmt.Printf("bPeoples: %v\n", bPeoples)
+
+		fmt.Printf("aaPeoples: %v\n", aaPeoples)
+		fmt.Printf("bbPeoples: %v\n", bbPeoples)
+
+		// change some value
+		aaPeoples[0] = "someone"
+
+		fmt.Println(`after change some value in slice`)
+		fmt.Println(strings.Repeat("-", 35))
+
+		fmt.Printf("aPeoples: %v\n", aPeoples)
+		fmt.Printf("bPeoples: %v\n", bPeoples)
+
+		fmt.Printf("aaPeoples: %v\n", aaPeoples)
+		fmt.Printf("bbPeoples: %v\n", bbPeoples)
+
+		/*
+			all new slice from old slice will have same effect while we change some value from old slice of new slice because slice is reference data type (ponter) of array
+		*/
+	}
 
 }
 
