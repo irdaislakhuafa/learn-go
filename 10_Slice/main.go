@@ -79,6 +79,13 @@ func main() {
 		*/
 	}
 
+	{
+		line(`len() function`) // to get length of array/slice
+		names := []string{"me", "you"}
+		fmt.Println("names:", names)
+		fmt.Println("Length of names:", len(names))
+	}
+
 }
 
 func line(text string) {
