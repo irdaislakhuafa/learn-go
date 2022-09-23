@@ -86,6 +86,30 @@ func main() {
 		fmt.Println("Length of names:", len(names))
 	}
 
+	{
+		line(`cap() function`) // get total capcity of slice
+		names := []string{"me", "you", "they", "we"}
+
+		fmt.Println("len names:", len(names), "expected: 4") // 4
+		fmt.Println("cap names:", cap(names), "expected: 4") // 4
+
+		tempNames := names[0:3] // ["me", "you", "they"]
+
+		fmt.Println("len tempNames:", len(tempNames), "expected: 3") // 3
+		fmt.Println("cap tempNames:", cap(tempNames), "expected: 4") // 4
+
+		tempNames = names[1:4]
+
+		fmt.Println("len tempNames:", len(tempNames), "expected: 3") // 3
+		fmt.Println("cap tempNames:", cap(tempNames), "expected: 3") // 4
+
+		/*
+			code		|	value						| len()	| cap()
+			names[0:4]	|	["me", "you", "they", "we"]	|	4	|	4
+			names[0:3]	|	["me", "you", "they", --]	|	3	|	4
+			names[1:4]	|	--- ["you", "they", "we"]	|	3	|	3
+		*/
+	}
 }
 
 func line(text string) {
