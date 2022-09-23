@@ -64,7 +64,7 @@ func main() {
 
 	// use index only
 	line(`use index only`)
-	for i, _ := range fruits { // or for i := range fruits
+	for i := range fruits { // or for i := range fruits
 		fmt.Println("Index :", i)
 	}
 
