@@ -91,7 +91,7 @@ func main() {
 		}
 
 		for _, v := range peoples {
-			for key, _ := range v {
+			for key := range v {
 				fmt.Print("|", key, ": ", v[key], " ")
 			}
 			fmt.Println()
