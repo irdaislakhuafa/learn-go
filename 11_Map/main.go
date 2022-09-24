@@ -43,6 +43,17 @@ func main() {
 			fmt.Println("Key:", key, "-> value:", value)
 		}
 	}
+
+	{
+		line("delete key-value from map")
+		ageOfPeoples := map[any]any{
+			"me":  20,
+			"you": 21,
+		}
+		fmt.Printf("ageOfPeoples: %v\n", ageOfPeoples)
+		delete(ageOfPeoples, "me") // only canbe use in map data type
+		fmt.Printf("ageOfPeoples: %v\n", ageOfPeoples)
+	}
 }
 
 func line(text string) {
