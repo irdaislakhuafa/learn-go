@@ -54,6 +54,23 @@ func main() {
 		delete(ageOfPeoples, "me") // only canbe use in map data type
 		fmt.Printf("ageOfPeoples: %v\n", ageOfPeoples)
 	}
+
+	{
+		line("detect present key in map")
+		ageOfPeoples := map[string]int{
+			"me":   20,
+			"you":  21,
+			"they": 0,
+		}
+
+		// _, exists := ageOfPeoples["they"]
+		// fmt.Println(`Key "they" is present? :`, exists)
+		if _, exists := ageOfPeoples["they"]; exists {
+			fmt.Println("Key exists")
+		}
+
+		fmt.Printf("ageOfPeoples: %v\n", ageOfPeoples)
+	}
 }
 
 func line(text string) {
