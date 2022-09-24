@@ -71,6 +71,32 @@ func main() {
 
 		fmt.Printf("ageOfPeoples: %v\n", ageOfPeoples)
 	}
+
+	{
+		line("slice and map combination")
+		peoples := []map[string]any{
+			{
+				"name":   "me",
+				"gender": "male",
+				"age":    20,
+			},
+			{
+				"name":   "you",
+				"gender": "female",
+			},
+			{
+				"name":   "they",
+				"gender": "unknown",
+			},
+		}
+
+		for _, v := range peoples {
+			for key, _ := range v {
+				fmt.Print("|", key, ": ", v[key], " ")
+			}
+			fmt.Println()
+		}
+	}
 }
 
 func line(text string) {
