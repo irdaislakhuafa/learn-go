@@ -128,6 +128,17 @@ func main() {
 		fmt.Println("cap:", cap(values)) // 6
 		fmt.Println("len:", len(values)) // 3
 	}
+
+	{
+		line(`copy() function`)
+		srcNames := []string{"me", "you", "they"}
+		dstNames := make([]string, 2)
+		cpyElement := copy(dstNames, srcNames) // only for slice not array
+
+		fmt.Printf("srcNames: %v\n", srcNames)
+		fmt.Printf("dstNames: %v\n", dstNames)
+		fmt.Printf("cpyElement: %v\n", cpyElement) // copyed element 2 becouse destination only have 2 space
+	}
 }
 
 func line(text string) {
