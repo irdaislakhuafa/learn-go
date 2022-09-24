@@ -65,9 +65,7 @@ func main() {
 		// change some value
 		aaPeoples[0] = "someone"
 
-		fmt.Println(`after change some value in slice`)
-		fmt.Println(strings.Repeat("-", 35))
-
+		line2(`after change some value in slice`)
 		fmt.Printf("aPeoples: %v\n", aPeoples)
 		fmt.Printf("bPeoples: %v\n", bPeoples)
 
@@ -139,6 +137,28 @@ func main() {
 		fmt.Printf("dstNames: %v\n", dstNames)
 		fmt.Printf("cpyElement: %v\n", cpyElement) // copyed element 2 becouse destination only have 2 space
 	}
+
+	{
+		line(`access slice element with 3 index`)
+		numbers := []int{1, 1, 1, 1}
+		fmt.Printf("numbers: %v\n", numbers)
+
+		// access slice without given capacity
+		line2("access slice without given capacity")
+		aNumbers := numbers[0:2] // {1, 1}
+		fmt.Printf("aNumbers: %v\n", aNumbers)
+		fmt.Printf("cap(aNumbers): %v\n", cap(aNumbers)) // 4
+		fmt.Printf("len(aNumbers): %v\n", len(aNumbers))
+
+		line2("access slice with give a capacity")
+		aNumbers = numbers[0:2:2]
+		fmt.Printf("aNumbers: %v\n", aNumbers)
+		fmt.Printf("cap(aNumbers): %v\n", cap(aNumbers))
+		fmt.Printf("len(aNumbers): %v\n", len(aNumbers))
+		/*
+			note: given capacity cannot be lower than len() of slice and bigger than cap() of slice
+		*/
+	}
 }
 
 func line(text string) {
@@ -146,4 +166,11 @@ func line(text string) {
 	fmt.Println(strings.Repeat("=", 35))
 	fmt.Printf("\t%s\n", strings.ToUpper(text))
 	fmt.Println(strings.Repeat("=", 35))
+}
+
+func line2(v any) {
+	s := strings.Repeat("-", 35)
+	fmt.Println(s)
+	fmt.Println(v)
+	fmt.Println(s)
 }
