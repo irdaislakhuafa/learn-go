@@ -28,6 +28,21 @@ func main() {
 		mapWithoutFirstValue := map[string]byte{}
 		fmt.Printf("mapWithoutFirstValue: %v\n", mapWithoutFirstValue)
 	}
+
+	{
+		line("iteration with for-range in map")
+		months := map[any]any{
+			"januari":  1,
+			"february": 2,
+			"maret":    3,
+			"april":    4,
+			"mei":      5,
+		}
+		fmt.Printf("months: %v\n", months)
+		for key, value := range months {
+			fmt.Println("Key:", key, "-> value:", value)
+		}
+	}
 }
 
 func line(text string) {
