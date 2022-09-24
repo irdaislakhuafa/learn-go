@@ -110,6 +110,24 @@ func main() {
 			names[1:4]	|	--- ["you", "they", "we"]	|	3	|	3
 		*/
 	}
+
+	{
+		line(`append() function`) // cannot be use in array
+		values := []int{1, 1, 1}
+		fmt.Println("Values:", values)
+		values = append(values, 1) // will allocate new slice with size len(values) * 2 if len(values) >= cap(values)
+		fmt.Println("Values:", values)
+
+		values = values[0:2]
+		fmt.Println("Value:", values)
+		fmt.Println("cap:", cap(values)) // 6
+		fmt.Println("len:", len(values)) // 2
+
+		values = append(values, 1) // if len(values) < cap(values) will not create new slice
+		fmt.Println("Value:", values)
+		fmt.Println("cap:", cap(values)) // 6
+		fmt.Println("len:", len(values)) // 3
+	}
 }
 
 func line(text string) {
