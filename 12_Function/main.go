@@ -29,7 +29,22 @@ func main() {
 		}
 
 		fmt.Println("Random Number With Range:", genRandomNumberWithRange(1, 3))
+	}
 
+	{
+		line(`stop function with "return" keyword`)
+		divideNumber := func(value, dividedNumber int) {
+			fmt.Printf("Divide %x and %x: ", value, dividedNumber)
+			if dividedNumber == 0 {
+				fmt.Printf("Error: cannot divide number with %v\n", dividedNumber)
+				return
+			}
+
+			fmt.Println("Result:", (value / dividedNumber))
+		}
+
+		divideNumber(2, 0)
+		divideNumber(2, 2)
 	}
 }
 
