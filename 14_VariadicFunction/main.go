@@ -7,6 +7,7 @@ import (
 
 func main() {
 	{
+		line("with variadic function")
 		// with variadic function
 		average := func(values ...int) float64 {
 			total := 0
@@ -19,6 +20,7 @@ func main() {
 		avg := average(1, 2, 3, 4, 5, 6, 7, 8, 9)
 		fmt.Printf("avg: %.2f\n", avg)
 
+		line("with slice")
 		// with slice
 		averageWithSlice := func(values []int) float64 {
 			total := 0
@@ -31,6 +33,22 @@ func main() {
 
 		avg = averageWithSlice([]int{1, 2, 3, 4, 5, 6, 7, 8, 9})
 		fmt.Printf("avg: %.2f\n", avg)
+	}
+
+	{
+		line("input variadic parameters with slice")
+		calculate := func(values ...int) int64 {
+			total := 0
+			for _, v := range values {
+				total += v
+			}
+
+			return int64(total)
+		}
+
+		slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+		total := calculate(slice...)
+		fmt.Printf("total: %v\n", total)
 	}
 }
 
