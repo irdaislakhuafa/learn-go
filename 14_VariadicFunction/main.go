@@ -50,6 +50,20 @@ func main() {
 		total := calculate(slice...)
 		fmt.Printf("total: %v\n", total)
 	}
+
+	{
+		line("general parameter and variadic parameter")
+		bio := func(name string, hobbies ...string) {
+			fmt.Printf("name: %v\n", name)
+			fmt.Printf("hobbies: %v\n", strings.Join(hobbies, ", "))
+		}
+
+		bio("irda", "ngoding", "makan", "tidur")
+
+		line2("input with slice")
+		hobbies := []string{"mengoding", "makan", "tidur"}
+		bio("irda", hobbies...)
+	}
 }
 
 func line(text string) {
@@ -57,4 +71,11 @@ func line(text string) {
 	fmt.Println(strings.Repeat("=", 35))
 	fmt.Printf("\t%s\n", strings.ToUpper(text))
 	fmt.Println(strings.Repeat("=", 35))
+}
+
+func line2(v any) {
+	s := strings.Repeat("-", 35)
+	fmt.Println(s)
+	fmt.Println(v)
+	fmt.Println(s)
 }
