@@ -139,4 +139,21 @@ func main() {
 		fmt.Printf("s1: %+v\n", s1)
 	}
 
+	{
+		utils.Line("struct and slice combination")
+		type person struct {
+			name string
+			age  uint8
+		}
+
+		allPersons := []person{
+			{"me", 20},
+			{name: "you", age: 21},
+			{name: "we", age: 22},
+		}
+
+		for i, p := range allPersons {
+			fmt.Printf("%+v: %+v\n", i+1, p)
+		}
+	}
 }
