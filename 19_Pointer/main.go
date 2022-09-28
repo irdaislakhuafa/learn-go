@@ -7,22 +7,28 @@ import (
 )
 
 func main() {
-	{
-		Line("pointer implementation")
-		// create pointer variables
-		var number *int
-		var name *string
+	Line("pointer implementation")
+	// create pointer variables
+	var number *int
+	var name *string
 
-		fmt.Printf("number: %v\n", number) // nil
-		fmt.Printf("name: %v\n", name)     // nil
+	fmt.Printf("number: %v\n", number) // nil
+	fmt.Printf("name: %v\n", name)     // nil
 
-		Line2("implementation")
-		var numberA int = 2
-		var numberB *int = &numberA
+	Line2("implementation")
+	var numberA int = 2
+	var numberB *int = &numberA
+	printValueAndAddress(&numberA, &numberB)
 
-		fmt.Printf("numberA (Value)\t\t: %v\n", numberA)
-		fmt.Printf("numberA (Address)\t: %v\n", &numberA)
-		fmt.Printf("numberB (Value)\t\t: %v\n", *numberB)
-		fmt.Printf("numberB (Address)\t: %v\n", numberB)
-	}
+	Line("pointer value change effect")
+	numberA = 10
+	printValueAndAddress(&numberA, &numberB)
+}
+
+func printValueAndAddress(a *int, b **int) {
+	fmt.Printf("numberA (Value)\t\t: %v\n", *a)
+	fmt.Printf("numberA (Address)\t: %v\n", a)
+	fmt.Printf("numberB (Value)\t\t: %v\n", **b)
+	fmt.Printf("numberB (Address)\t: %v\n", *b)
+
 }
