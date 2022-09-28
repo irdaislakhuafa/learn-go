@@ -106,6 +106,14 @@ func main() {
 		s1.person.age = 21 // "age" of person
 
 		fmt.Printf("s1: %+v\n", s1)
+
+		{
+			utils.Line("insert sub-struct value")
+			p1 := person{name: "me", age: 20}
+			s1 := student{person: p1, grade: 1}
+
+			fmt.Printf("s1: %+v\n", s1)
+		}
 	}
 
 }
