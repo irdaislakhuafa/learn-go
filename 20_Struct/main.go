@@ -116,4 +116,27 @@ func main() {
 		}
 	}
 
+	{
+		utils.Line("anonymous struct")
+		s1 := struct {
+			person struct {
+				name string
+				age  byte
+			}
+			grade byte
+		}{}
+
+		s1.person = struct {
+			name string
+			age  byte
+		}{
+			name: "me",
+			age:  20,
+		}
+
+		s1.grade = 1
+
+		fmt.Printf("s1: %+v\n", s1)
+	}
+
 }
