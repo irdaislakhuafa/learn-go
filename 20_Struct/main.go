@@ -7,17 +7,17 @@ import (
 )
 
 func main() {
-	{
-		/*
-			struct like class in OOP language
-		*/
-		utils.Line("struct declaration")
-		// create a struct
-		type student struct {
-			name  string
-			grade int
-		}
+	/*
+		struct like class in OOP language
+	*/
+	utils.Line("struct declaration")
+	// create a struct
+	type student struct {
+		name  string
+		grade int
+	}
 
+	{
 		utils.Line("struct implementation")
 		student1 := student{
 			name: "me",
@@ -28,6 +28,9 @@ func main() {
 		fmt.Printf("student1.grade\t: %v\n", student1.grade)
 		fmt.Printf("student{}\t: %+v\n", student{})
 
+	}
+
+	{
 		utils.Line("create 3 struct variable with different way")
 		// 1
 		v1 := student{}
@@ -46,5 +49,19 @@ func main() {
 		fmt.Printf("v1: %+v\n", v1)
 		fmt.Printf("v2: %+v\n", v2)
 		fmt.Printf("v3: %+v\n", v3)
+
 	}
+
+	{
+		utils.Line("pointer struct variable")
+		s1 := student{name: "me", grade: 1}
+		var s2 *student = &s1
+
+		fmt.Printf("s1.name: %v\n", s1.name)
+		fmt.Printf("s2.name: %v\n", s2.name)
+		s2.name = "you"
+		fmt.Printf("\ns1.name: %v\n", s1.name)
+		fmt.Printf("s2.name: %v\n", s2.name)
+	}
+
 }
