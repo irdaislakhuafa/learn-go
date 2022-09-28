@@ -155,5 +155,17 @@ func main() {
 		for i, p := range allPersons {
 			fmt.Printf("%+v: %+v\n", i+1, p)
 		}
+
+		utils.Line("type alias")
+		type people person
+		p1 := person{name: "me", age: 20}
+		p2 := people{name: "you", age: 21}
+
+		fmt.Printf("p1: %+v\n", p1)
+		fmt.Printf("p2: %+v\n", p2)
+
+		utils.Line2("casting struct variable to other struct (from alias) always valid")
+		fmt.Printf("p1: %+v\n", people(p1))
+		fmt.Printf("p2: %+v\n", person(p2))
 	}
 }
