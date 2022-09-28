@@ -88,4 +88,24 @@ func main() {
 		fmt.Printf("s1.person.age\t: %v\n", s1.person.age)
 	}
 
+	{
+		utils.Line("embedded struct with same property name")
+		type person struct {
+			name string
+			age  byte
+		}
+
+		type student struct {
+			grade byte
+			age   byte
+			person
+		}
+		s1 := student{}
+		s1.name = "me"
+		s1.age = 20        // "age" of student
+		s1.person.age = 21 // "age" of person
+
+		fmt.Printf("s1: %+v\n", s1)
+	}
+
 }
