@@ -2,23 +2,27 @@ package main
 
 import (
 	"fmt"
-	"strings"
+
+	. "github.com/irdaislakhuafa/learn-go/utils"
 )
 
 func main() {
+	{
+		Line("pointer implementation")
+		// create pointer variables
+		var number *int
+		var name *string
 
-}
+		fmt.Printf("number: %v\n", number) // nil
+		fmt.Printf("name: %v\n", name)     // nil
 
-func line(text string) {
-	fmt.Println()
-	fmt.Println(strings.Repeat("=", 35))
-	fmt.Printf("\t%s\n", strings.ToUpper(text))
-	fmt.Println(strings.Repeat("=", 35))
-}
+		Line2("implementation")
+		var numberA int = 2
+		var numberB *int = &numberA
 
-func line2(v any) {
-	s := strings.Repeat("-", 35)
-	fmt.Println(s)
-	fmt.Println(v)
-	fmt.Println(s)
+		fmt.Printf("numberA (Value)\t\t: %v\n", numberA)
+		fmt.Printf("numberA (Address)\t: %v\n", &numberA)
+		fmt.Printf("numberB (Value)\t\t: %v\n", *numberB)
+		fmt.Printf("numberB (Address)\t: %v\n", numberB)
+	}
 }
