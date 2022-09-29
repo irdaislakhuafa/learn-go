@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	meIsAlias "github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/aliases"
 	. "github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/dotprefix"
 	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/library"
 	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/structs"
@@ -31,5 +32,10 @@ func main() {
 	{
 		utils.Line("import with dot(.) prefix")
 		SaySomething()
+	}
+
+	{
+		utils.Line("use alias when import package")
+		meIsAlias.MyAlias()
 	}
 }
