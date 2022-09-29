@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	. "github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/dotprefix"
 	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/library"
 	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/structs"
 	"github.com/irdaislakhuafa/learn-go/utils"
@@ -25,5 +26,10 @@ func main() {
 			Grade: 1,
 		}
 		fmt.Printf("s1: %+v\n", s1)
+	}
+
+	{
+		utils.Line("import with dot(.) prefix")
+		SaySomething()
 	}
 }
