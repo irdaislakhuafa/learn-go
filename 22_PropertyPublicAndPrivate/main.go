@@ -5,6 +5,7 @@ import (
 
 	meIsAlias "github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/aliases"
 	. "github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/dotprefix"
+	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/initstruct"
 	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/library"
 	"github.com/irdaislakhuafa/learn-go/22_PropertyPublicAndPrivate/structs"
 	"github.com/irdaislakhuafa/learn-go/utils"
@@ -45,5 +46,16 @@ func main() {
 		*/
 		utils.Line("access property in file with same package")
 		sayHelloFromPartial()
+	}
+
+	{
+		/*
+			init() function will be call first time when app running, is this function attached to main package, init() method will be call before main() method
+		*/
+		utils.Line("init() function")
+		s1 := initstruct.StudentInit
+
+		fmt.Printf("s1.Name: %v\n", s1.Name)
+		fmt.Printf("s1.Grade: %v\n", s1.Grade)
 	}
 }
