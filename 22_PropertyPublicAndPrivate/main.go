@@ -38,4 +38,12 @@ func main() {
 		utils.Line("use alias when import package")
 		meIsAlias.MyAlias()
 	}
+
+	{
+		/*
+			when run go build or go run all files with package main must be call in the argument like this "go run main.go partial.go"
+		*/
+		utils.Line("access property in file with same package")
+		sayHelloFromPartial()
+	}
 }
