@@ -55,4 +55,14 @@ func main() {
 		}
 		fmt.Printf("data: %v\n", data)
 	}
+
+	{
+		utils.Line("casting variable in empty interface")
+		var everything any = 2
+		number := everything.(int) * 10
+		fmt.Printf("Multiplied by 10 is: %+d\n", number)
+
+		everything = []string{"never", "give", "up"}
+		fmt.Printf("Arrays: %+s", strings.Join(everything.([]string), ", "))
+	}
 }
