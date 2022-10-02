@@ -38,4 +38,21 @@ func main() {
 		utils.Line2("")
 		fmt.Printf("values: %v\n", values)
 	}
+
+	{
+		/*
+			for Go version 18.1 or above we can use `any` keyword instead of interface{}`
+		*/
+		utils.Line(`use "any" instead of "interface{}"`)
+		data := map[string]any{
+			"name": "irda islakhu afa",
+			"age":  20.10,
+			"hobbies": []string{
+				"ngoding",
+				"makan",
+				"tidur",
+			},
+		}
+		fmt.Printf("data: %v\n", data)
+	}
 }
