@@ -65,4 +65,18 @@ func main() {
 		everything = []string{"never", "give", "up"}
 		fmt.Printf("Arrays: %+s", strings.Join(everything.([]string), ", "))
 	}
+
+	{
+		utils.Line("casting empty interface variable to struct or pointer")
+		type person struct {
+			name string
+			age  int
+		}
+
+		var everything any = &person{
+			name: "me",
+			age:  20,
+		}
+		fmt.Println("person.name:", everything.(*person).name)
+	}
 }
