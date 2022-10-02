@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/irdaislakhuafa/learn-go/utils"
@@ -78,5 +79,31 @@ func main() {
 			age:  20,
 		}
 		fmt.Println("person.name:", everything.(*person).name)
+	}
+
+	{
+		utils.Line("slice, map, and interface{] combination")
+		persons := []map[any]any{
+			{
+				"name": "me",
+				"age":  20,
+			},
+			{
+				"name": "you",
+				"age":  21,
+			},
+			{
+				"name": "we",
+				"age":  "unknown",
+				"tall": "158 cm",
+			},
+		}
+
+		for index, person := range persons {
+			utils.Line2("index:\t" + strconv.Itoa(index))
+			for key, value := range person {
+				fmt.Printf("Field: \"%+v\"\t: \"%+v\"\n", key, value)
+			}
+		}
 	}
 }
