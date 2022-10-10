@@ -15,14 +15,30 @@ func main() {
 		- reflect.TypeOf() : will return object with type reflect.Type, contains all information about type of variable
 	*/
 	{
-		utils.Line("search data type and value with reflect")
-		number := 20
+		utils.Line(" ")
+		number := struct {
+			No int
+		}{
+			No: 20,
+		}
 		reflectValue := reflect.ValueOf(number)
 
-		fmt.Printf("number: %v | type: %v\n", number, reflectValue.Type().Name())
+		fmt.Printf("number: %v | type: \"%v\"\n", number, reflectValue.Type().Name())
 
 		if reflectValue.Kind() == reflect.Int {
 			fmt.Println("value is:", reflectValue.Int())
+		}
+
+		if reflectValue.Kind() == reflect.String {
+			fmt.Println("value is:", reflectValue.String())
+		}
+
+		if reflectValue.Kind() == reflect.Bool {
+			fmt.Println("value is:", reflectValue.Bool())
+		}
+
+		if reflectValue.Kind() == reflect.Struct {
+			fmt.Printf("value is: %+v\n", reflectValue)
 		}
 	}
 }
