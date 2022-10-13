@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
+	"github.com/irdaislakhuafa/learn-go/25_Reflect/my_imagination"
 	"github.com/irdaislakhuafa/learn-go/utils"
 )
 
@@ -40,5 +41,32 @@ func main() {
 		if reflectValue.Kind() == reflect.Struct {
 			fmt.Printf("value is: %+v\n", reflectValue)
 		}
+
+		// just try
+		type details struct {
+			Hobbies string
+			Eye     int
+			Address struct {
+				Regency string
+			}
+		}
+		type human struct {
+			Name    string
+			Age     int
+			Details details
+		}
+
+		h1 := human{
+			Name: "me",
+			Age:  20,
+			Details: details{
+				Hobbies: "oioi",
+				Eye:     2,
+				Address: struct{ Regency string }{
+					Regency: "Tuban",
+				},
+			},
+		}
+		my_imagination.PrintValues(h1)
 	}
 }
