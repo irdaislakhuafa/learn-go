@@ -20,7 +20,7 @@ func printValue(v any, sep string) {
 	valueV := reflect.ValueOf(v)
 
 	if sep != "" {
-		fmt.Println(strings.Repeat("\t", count) + strings.Repeat(sep, line))
+		fmt.Println(strings.Repeat("\t|", count) + strings.Repeat(sep, line))
 	}
 
 	for i := 0; i < typeV.NumField(); i++ {
@@ -34,7 +34,7 @@ func printValue(v any, sep string) {
 			continue
 		}
 
-		fmt.Printf("%s%+v\t: ", strings.Repeat("\t", count), typeV.Field(i).Name)
+		fmt.Printf("%s|%+v\t: ", strings.Repeat("\t", count), typeV.Field(i).Name)
 		fmt.Printf("%+v\n", func() any {
 			switch valueV.Field(i).Kind() {
 			case reflect.Int:
