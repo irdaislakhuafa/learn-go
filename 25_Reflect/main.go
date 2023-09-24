@@ -91,6 +91,13 @@ func main() {
 		}
 		h := Human{Name: "Irda Islakhu Afa", Age: age, BornAt: born}
 		h.printPropertiesInfo()
+
+		// access method with reflect
+		fmt.Println("")
+		hRef := reflect.ValueOf(&h)
+		hMeth := hRef.MethodByName("SetName")
+		hMeth.Call([]reflect.Value{reflect.ValueOf("me")})
+		h.printPropertiesInfo()
 	}
 }
 
@@ -113,4 +120,8 @@ func (h *Human) printPropertiesInfo() {
 		fmt.Printf("Value: %+v\n", v.Field(i).Interface())
 		fmt.Println("")
 	}
+}
+
+func (h *Human) SetName(name string) {
+	h.Name = name
 }
