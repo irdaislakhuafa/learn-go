@@ -16,15 +16,16 @@ func main() {
 		- reflect.TypeOf() : will return object with type reflect.Type, contains all information about type of variable
 	*/
 	{
-		utils.Line(" ")
-		number := struct {
+		utils.Line("learn reflect")
+		type Num struct {
 			No int
-		}{
+		}
+		number := Num{
 			No: 20,
 		}
 		reflectValue := reflect.ValueOf(number)
 
-		fmt.Printf("number: %v | type: \"%v\"\n", number, reflectValue.Type().Name())
+		fmt.Printf("number: %v | type: \"%v\"\n", number, reflectValue.Type())
 
 		if reflectValue.Kind() == reflect.Int {
 			fmt.Println("value is:", reflectValue.Int())
