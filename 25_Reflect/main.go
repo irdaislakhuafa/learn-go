@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"time"
 
 	"github.com/irdaislakhuafa/learn-go/25_Reflect/my_imagination"
 	"github.com/irdaislakhuafa/learn-go/utils"
@@ -69,5 +70,47 @@ func main() {
 			},
 		}
 		my_imagination.PrintValues(h1)
+
+		// example again
+		getMyAge := func() (int, time.Time, error) {
+			layout := "02 January 2006"
+			value := "01 January 2002"
+			born, err := time.Parse(layout, value)
+			if err != nil {
+				return 0, time.Time{}, err
+			}
+
+			now := time.Now()
+			age := now.Year() - born.Year()
+			return age, born, nil
+		}
+
+		age, born, err := getMyAge()
+		if err != nil {
+			panic(err)
+		}
+		h := Human{Name: "Irda Islakhu Afa", Age: age, BornAt: born}
+		h.printPropertiesInfo()
+	}
+}
+
+type Human struct {
+	Name   string
+	Age    int
+	BornAt time.Time
+}
+
+func (h *Human) printPropertiesInfo() {
+	v := reflect.ValueOf(h)
+	if v.Kind() == reflect.Pointer {
+		v = v.Elem()
+	}
+
+	t := v.Type()
+	for i := 0; i < t.NumField(); i++ {
+		fmt.Printf("Name: %+v\n", t.Field(i).Name)
+		fmt.Printf("Data Type: %+v\n", t.Field(i).Type)
+		fmt.Printf("Value: %+v\n", v.Field(i).Interface())
+		fmt.Println("")
 	}
 }
