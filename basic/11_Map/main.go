@@ -97,6 +97,23 @@ func main() {
 			fmt.Println()
 		}
 	}
+
+	{
+		line("Example Maps")
+		type people struct {
+			Name string
+			Age  int64
+		}
+		maps := map[string]people{}
+		maps["a"] = people{
+			Name: "a",
+			Age:  21,
+		}
+
+		for _, value := range maps {
+			fmt.Printf("value: %v\n", value)
+		}
+	}
 }
 
 func line(text string) {
